@@ -4,10 +4,10 @@ from threading import Thread, current_thread
 from time import sleep
 
 
-def list_work(a:list):
+def home_work(a:list):
 
     p_id=os.getpid()
-    print(f"{p_id}----{current_process().name}---{current_thread().name}----Jarayon boshlandi")
+    print(f"{p_id}===={current_process().name}===={current_thread().name}====Jarayon boshlandi")
     juft = 1
     toq = 1
     s = 0
@@ -16,22 +16,22 @@ def list_work(a:list):
         if i%2 == 0:
             juft *= i
         elif i%2 == 1:
-            toq*=i
+            toq *= i
 
     print(f"Natija == {(juft-toq)}")
-    print(f"{current_process().name} ---- {current_thread().name} --- jarayon yakunlandi")
+    print(f"{current_process().name} ==== {current_thread().name} === jarayon yakunlandi")
 
 
 if  __name__ == "__main__":
     d = list(range(1, 40))
     s_time=time.time()
 # 1 single threed  vaqt= 10.002508401870728
-    list_work(d)
-    list_work(d)
+    home_work(d)
+    home_work(d)
 
 # 2 multithreed   vaqt= 5.181133270263672
-#     f1=Thread(target=list_work,args=(d ,))
-#     f2=Thread(target=list_work,args=(d ,))
+#     f1=Thread(target=home_work,args=(d ,))
+#     f2=Thread(target=home_work,args=(d ,))
 #     f1.start()
 #     f2.start()
 #
@@ -39,8 +39,8 @@ if  __name__ == "__main__":
 #     f2.join()
 
 # 3 multiprogres   vaqt= 5.774171829223633
-#     m1 = Process(target=list_work,args=(d ,))
-#     m2 = Process(target=list_work,args=(d ,))
+#     m1 = Process(target=home_work,args=(d ,))
+#     m2 = Process(target=home_work,args=(d ,))
 #
 #     m1.start()
 #     m2.start()
